@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout from Git') {
             steps {
-                git branch: 'master', url: 'https://github.com/AmanPathak-DevOps/End-to-End-Kubernetes-DevSecOps-Tetris-Project.git'
+                git branch: 'master', url: 'https://github.com/Amul-Thantharate/Kubernetes-DevSceOps-Tetris.git'
             }
         }
         stage('Initializing Terraform') {
@@ -48,7 +48,7 @@ pipeline {
         }
         stage('Terraform Action') {
             steps {
-                withAWS(credentials: 'aws-key', region: 'us-east-1') { 
+                withAWS(credentials: 'aws-key', region: 'ap-northeast-1') { 
                 script {
                     echo "${params.'Terraform-Action'}"
                     dir('EKS-TF') {
